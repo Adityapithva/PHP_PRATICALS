@@ -1,10 +1,8 @@
 <?php
-$ans = ""; // Initialize $ans variable
-
+$ans = ""; 
 if(isset($_POST['select'])) {
     $a = $_POST['a'];
     $b = $_POST['b'];
-    
     if ($_POST['select'] == 'add') {
         $ans = $a + $b;
     } elseif ($_POST['select'] == 'sub') {
@@ -12,18 +10,12 @@ if(isset($_POST['select'])) {
     } elseif ($_POST['select'] == 'mul') {
         $ans =  $a * $b;
     } elseif ($_POST['select'] == 'div') {
-        if($b != 0) {
             $ans = $a / $b;
-        } else {
-            $ans = "Division by zero is not allowed";
-        }
     }
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
-
 <body>
     <h1>Simple Calculator</h1>
     <form action="3_1.php" method="post">
