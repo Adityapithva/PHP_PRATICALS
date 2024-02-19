@@ -1,11 +1,28 @@
+<?php
+$ans = ""; // Initialize $ans variable
+
+if(isset($_POST['select'])) {
+    $a = $_POST['a'];
+    $b = $_POST['b'];
+    
+    if ($_POST['select'] == 'add') {
+        $ans = $a + $b;
+    } elseif ($_POST['select'] == 'sub') {
+        $ans =  $a - $b;
+    } elseif ($_POST['select'] == 'mul') {
+        $ans =  $a * $b;
+    } elseif ($_POST['select'] == 'div') {
+        if($b != 0) {
+            $ans = $a / $b;
+        } else {
+            $ans = "Division by zero is not allowed";
+        }
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculator</title>
-</head>
 
 <body>
     <h1>Simple Calculator</h1>
@@ -20,19 +37,9 @@
             <option value="div">Division</option><br>
         </select>
         <br>
-        <input type="submit" value="submit">
+        <input type="submit" value="submit"><br>
+        Answer:<input type="text" value="<?php echo"$ans"?>">
     </form>
-    <?php
-    if ($_POST['select'] == 'add') {
-        echo "Addition:" . $_POST['a'] + $_POST['b'];
-    } elseif ($_POST['select'] == 'sub') {
-        echo 'Subtraction:' . $_POST['a'] - $_POST['b'];
-    } elseif ($_POST['select'] == 'mul') {
-        echo 'Multiplication:' . $_POST['a'] * $_POST['b'];
-    } else {
-        echo "Division:" . $_POST['a'] / $_POST['b'];
-    }
-    ?>
 </body>
 
 </html>
