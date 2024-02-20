@@ -12,7 +12,7 @@
         while(isset($str[$count])){
             $count++;
         }
-        echo $count;
+        echo "Length of given string is:".$count;
     }
     ?>
 </body>
