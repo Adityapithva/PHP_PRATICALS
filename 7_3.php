@@ -1,10 +1,10 @@
 <?php
 class Book{
-    public $name;
-    public $auther;
-    public $costPrice;
-    public $sellingPrice;
-    public function __construct(){
+    private $name;
+    private $auther;
+    private $costPrice;
+    private $sellingPrice;
+    public function getdata(){
         $this->name = $_POST['bname'];
         $this->auther = $_POST['aname'];
         $this->costPrice = $_POST['cp'];
@@ -39,6 +39,7 @@ class Book{
         $costPrice = $_POST["cp"];
         $sellingPrice = $_POST["sp"];
         $book = new Book();
+        $book->getdata();
         $book->display();
         $book->profit();
     }
