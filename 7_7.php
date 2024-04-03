@@ -1,25 +1,19 @@
 <?php
-
-// Base class
 class Animal {
     public function makeSound() {
         return "Generic animal sound";
     }
 }
-
 class Dog extends Animal {
     public function makeSound() {
         return "Woof!";
     }
 }
-
 class Cat extends Animal {
     public function makeSound() {
         return "Meow!";
     }
 }
-
-
 $animal = new Animal();
 echo $animal->makeSound() . "<br>"; 
 
